@@ -1,0 +1,2 @@
+hello there! 
+Well this text file is created to show the working of the join method [path.join] from the path module

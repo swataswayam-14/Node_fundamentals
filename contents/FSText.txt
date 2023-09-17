@@ -1,0 +1,1 @@
+This text file is for demonstrating the use of readFileSync of fs module.

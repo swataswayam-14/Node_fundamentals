@@ -1,0 +1,1 @@
+Here is the result It is what it is This text file is for demonstrating the use of readFileSync of fs module.,This text file is for demonstrating the use of readFileSync of fs module. yeah so this is the appended text added to the file ,This text file is for demonstrating the use of readFileSync of fs module.
