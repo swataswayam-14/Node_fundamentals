@@ -1,0 +1,1 @@
+we can share a code without dragging the massive node modules. We can simply provide what packages our project is using as dependencies, and the user who wants to use it can just run the command "npm install" and the required modules will be installed in the local environment.
