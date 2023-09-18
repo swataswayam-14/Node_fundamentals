@@ -1,0 +1,1 @@
+//GET is the default request that the browser performs. When we open up the browser we wanna get some resources
