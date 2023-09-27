@@ -5,3 +5,4 @@ for(let i = 0; i<10000000 ;i++){
 }
 console.timeEnd();
 console.log('next task');
+//javascript is synchronous and single threaded

@@ -15,7 +15,9 @@ const server = http.createServer((req,res)=>{
     res.writeHead(200,{'content-type':'text/html'});//if we set the content-type to text/plain , then the text is not treated as html , and simply it is rendered as a plain text like '<h1>Home page</h1>'
     res.write('<h1>Home Page</h1>');
     console.log(req);//req is a giant object
-    console.log(req.method);//GET
+    console.log(req.method);//GET - the user is performing a GET request
+    //req.url 
+    
     res.end();
 });
 

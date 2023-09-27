@@ -10,5 +10,5 @@ const server = http.createServer();
 //subscribe to it / listen for it /  respond to it
 server.on('request',(req,res) =>{
     res.end('Welcome');
-});
+});//behind the scenes the server emits the request event and then we may listen for it ,subscribe it etc...
 server.listen(5000);
