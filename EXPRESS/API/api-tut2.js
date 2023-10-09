@@ -41,6 +41,39 @@ app.get('/api/products/:productID/reviews/:reviewID',(req,res)=>{
     res.send('Hello World');
 });
 
+//query parameters passed as key:value pairs can be accessed, below is an example for a feature of a query string parameter GET request by the user
+
+app.get('/api/v1/query',(req,res)=>{
+    console.log(req.query);
+    res.send("Hello");
+})//this allows us to access those parameters and based on them there is some kind of functionality
+//if a user search for a specific product , he/she needs to write that specific query parameters, this way the user can limit of how many products they are getting back
+
+app.get('/api/v2/query',(req,res) =>{
+    const {search , limit} = req.query;
+    let sortedProducts = [...products]
+    if(search){
+        sortedProducts = sortedProducts.filter((product)=>{
+            return product.name.startsWith(search)
+        })
+    }    //limit = 1 -> 1 product , limit=2 -> 2 products
+    //whatever value the user provides in the limit , it provides that many number of products
+
+    //search = a , means it only shows the product that starts with 'a'
+    //search=a&limit=1 -> 1 product that start with a
+    if(limit){
+        sortedProducts = sortedProducts.slice(0,Number(limit))
+    }
+    if(sortedProducts.length < 1){
+
+       return res.status(200).send('no products matched your search')
+    }//here we are trying to filter the product but nothing came back hence whatever query string parameters provided didn't yield any result
+    return res.status(200).json(sortedProducts);
+    //if(sortedProducts.length < 1){
+    //    res.status(200).send('no products matched your search')
+    //}//here we are trying to filter the product but nothing came back hence whatever query string parameters provided didn't yield any result
+  //  res.status(200).json(sortedProducts)
+})
 app.listen(5000, ()=>{
     console.log('Server listening on port 5000....');
-});
+})

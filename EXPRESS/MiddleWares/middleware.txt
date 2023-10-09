@@ -1,0 +1,5 @@
+Express MiddleWares are functions that executes during the request to the server
+each MiddleWare functions has access to req and res objects
+Express applications are nothing but bunch of middleware functions stuffed together to make one big express applications
+
+req => middleware => res

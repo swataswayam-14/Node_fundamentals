@@ -1,0 +1,6 @@
+for practice
+
+GET http://hn.algolia.com/api/v1/items/:id
+GET http://hn.algolia.com/api/v1/users/:username
+
+api/v1/query?name=swayam&id=4 : we can add as many query parameters as key:value pairs joined by & 
