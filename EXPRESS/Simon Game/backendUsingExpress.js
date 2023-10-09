@@ -10,3 +10,4 @@ app.get('*',(req,res)=>{
 app.listen(5000,()=>{
     console.log(`Server listening on port 5000...`);
 })
+//this is how simple it is to write the backend program using express

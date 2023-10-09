@@ -1,0 +1,4 @@
+api : http interface to interact  with our data
+data is sent using JSON : Java Script Object Notation
+to send our response , res.json method is used
+the main idea with API is that , it is used for our server to provide data
