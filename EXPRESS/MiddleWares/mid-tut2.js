@@ -7,11 +7,15 @@ const logger = (req, res , next) =>{
     const time = new Date().getFullYear();
     console.log(method,url,time);
     //res.send('Testing');
-    next();
+    next();//passing it to the next function. 
 }//here logger() is a middleware function
+//so either you send your own response or you pass it to the next function
 
 app.get('/',logger,(req,res)=>{
     res.send('Home');
+})
+app.get('/about',logger,(req,res)=>{
+    res.send('About Page');
 })
 
 app.listen(5000,()=>{
