@@ -11,6 +11,10 @@ const logger = (req, res , next) =>{
 }//here logger() is a middleware function
 //so either you send your own response or you pass it to the next function
 
+//it is better if we have the logger in a separate file , this will keep our .js file clean
+//if we had many number of routes , then it will be difficult to add this method manually to each and every route , it would be good if we have a method that adds the middleware to all the routes
+//implemented in the next .js file
+
 app.get('/',logger,(req,res)=>{
     res.send('Home');
 })
