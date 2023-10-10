@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Form with GET Method</h2>
+        <form id="getForm">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name" required><!--here we donot have the action and we donot have the method-->
+            <br>
+            <input type="button" value="Submit (GET)" onclick="submitForm('getForm', 'GET')">
+        </form>
+
+        <h2>Form with POST Method</h2>
+        <form id="postForm">
+            <label for="name-post">Enter your name:</label>
+            <input type="text" id="name=post" name="name=post" required>
+            <br>
+            <input type="button" value="Submit (POST)" onclick="submitForm('postForm', 'POST')">
+        </form>
+    </div>
+
+    <script>
+        function submitForm(formId, method) {
+            var formData = new FormData(document.getElementById(formId));
+
+            fetch('/process', {
+                method: method,
+                body: formData
+            })
+            .then(response => response.json()) // Assuming the response is JSON, modify accordingly
+            .then(data => {
+                // Handle the response data here
+                console.log('Response:', data);
+            })
+            .catch(error => {
+                // Handle errors here
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+
+</html>

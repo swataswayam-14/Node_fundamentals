@@ -1,0 +1,2 @@
+handeling the form POST request strictly using JavaScript
+sending the request using JavaScript.
